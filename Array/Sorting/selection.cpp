@@ -2,33 +2,29 @@
 using namespace std;
 int main()
 {
-    int arr[] = {0, 1, 3, 5, 2};
+
+    int arr[] = {12, 34, 1, 6, 2, 34};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int max = INT_MIN;
-    for (int i = 0; i < size; i++)
+
+    for (int i = 0; i < size - 1; i++)
     {
-        if (arr[i] > max)
+        int index = i;
+
+        for (int j = i + 1; j < size; j++)
         {
-            max = arr[i];
-        }
-    }
-    int result = 1;
-    for (int i = 1; i < max; i++)
-    {
-        int flag = 0;
-        for (int j = 0; j < size; j++)
-        {
-            if (i == arr[j])
+            if (arr[j] < arr[index])
             {
-                flag = 1;
+                index = j;
             }
         }
-        if (flag == 0)
-        {
-            result = i;
-            break;
-        }
+
+        swap(arr[i], arr[index]);
     }
-    cout << "Result: " << result;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
     return 0;
 }
