@@ -2,6 +2,7 @@
 
 int main()
 {
+	const char str = "A";
 	int size = 5;
 	int arr[5] = {3, -2, 1, 2, 5};
 	int max = -999999;
