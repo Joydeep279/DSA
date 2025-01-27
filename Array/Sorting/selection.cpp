@@ -1,11 +1,8 @@
 #include <iostream>
 using namespace std;
-int main()
+
+void Selection(int *arr, int size)
 {
-
-    int arr[] = {12, 34, 1, 6, 2, 34};
-    int size = sizeof(arr) / sizeof(arr[0]);
-
     for (int i = 0; i < size - 1; i++)
     {
         int index = i;
@@ -20,6 +17,14 @@ int main()
 
         swap(arr[i], arr[index]);
     }
+}
+int main()
+{
+
+    int arr[] = {12, 34, 1, 6, 2, 34};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    Selection(arr, size);
 
     for (int i = 0; i < size; i++)
     {
